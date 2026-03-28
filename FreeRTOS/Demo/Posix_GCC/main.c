@@ -73,8 +73,10 @@
     #include <trcRecorder.h>
 #endif
 
-#define    BLINKY_DEMO    0
-#define    FULL_DEMO      1
+#define    BLINKY_DEMO      0
+#define    FULL_DEMO        1
+#define    ASSIGNMENT1_DEMO 2
+#define    ASSIGNMENT2_DEMO 3
 
 #ifdef BUILD_DIR
     #define BUILD         BUILD_DIR
@@ -95,6 +97,8 @@
 
 extern void main_blinky( void );
 extern void main_full( void );
+extern void main_assignment1( void );
+extern void main_assignment2( void );
 static void traceOnEnter( void );
 
 /*
@@ -178,6 +182,16 @@ int main( void )
     {
         console_print( "Starting full demo\n" );
         main_full();
+    }
+    #elif ( mainSELECTED_APPLICATION == ASSIGNMENT1_DEMO )
+    {
+        console_print( "Starting Assignment 1\n" );
+        main_assignment1();
+    }
+    #elif ( mainSELECTED_APPLICATION == ASSIGNMENT2_DEMO )
+    {
+        console_print( "Starting Assignment 2\n" );
+        main_assignment2();
     }
     #else
     {
